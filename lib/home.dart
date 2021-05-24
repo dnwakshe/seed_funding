@@ -204,45 +204,92 @@ class _IndexState extends State<Index> {
                                                         padding: const EdgeInsets.all(10.0),
                                                         child: Row(
                                                           children: [
-                                                           CircleAvatar(                                                             
+                                                           CircleAvatar(       
+                                                                                                                   
                                                              backgroundColor: Colors.amber,
                                                              child: Text("D"),
+                                                             radius: 25,
                                                            ),
                                                            
+                                                          
                                                            Column(
+                                                             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                              children: [
-                                                               //========= Owner name ======
-                                                               Padding(
-                                                                 padding: const EdgeInsets.all(8.0),
-                                                                 child: Text("Dnyaneshwar Wakshe", style: TextStyle(color: Colors.black,fontSize: 15, fontWeight: FontWeight.bold),),
-                                                               ),
-                                                                 // ======== subtitle ======
-                                                               Padding(
-                                                                  padding: const EdgeInsets.all(1.0),
-                                                                  child: Text("Software Developer", style: TextStyle(color: Colors.grey,fontSize: 15,),),
-                                                                ),   
-                                                             ],
+                                                               
+                                                               Row(
+                                                                 
+                                                                 children: [
+                                                                     Column(
+                                                                      children: [
+                                                                        //========= Owner name ======
+                                                                        Padding(
+                                                                              padding: const EdgeInsets.only(top:10.0,right: 8.0,left: 8.0),
+                                                                              child: Text("Dnyaneshwar Wakshe ", style: TextStyle(color: Colors.black,fontSize: 15, fontWeight: FontWeight.bold),),
+                                                                            ), 
+                                                                    // ======== subtitle ======
+                                                                    Text("Software Developer",  style: TextStyle(color: Colors.grey,fontSize: 15,),),
+                                                                
+                                                                
+                                                               ],
+                                                                    ),
+                                                                  
+                                                                    Padding(
+                                                                      padding: const EdgeInsets.only(left: 70.0),
+                                                                      child: IconButton(
+                                                                        alignment: Alignment.centerRight,
+                                                                                onPressed: (){},
+                                                                                icon: Icon(Icons.more_vert),
+                                                                              ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                           ],
                                                            ),
+
+                                                           
                                                           ],
                                                         ),
                                                       ),
+
+                                                      
                                                       //========== post caption ======
                                                       Row(
                                                         crossAxisAlignment: CrossAxisAlignment.start,
                                                         children: [
                                                           Padding(
-                                                                      padding: const EdgeInsets.all(8.0),
+                                                                      padding: const EdgeInsets.all(10.0),
                                                                       child: Text("This my first post in seed funding portal", style: TextStyle(color: Colors.black,fontSize: 15,),),
                                                                     ),
                                                         ],
                                                       ), 
                                                       // for single post sigle image asset view and for multiple photos carousel should  used 
                                                       
-                                                          Container(
-                                                            height: 200,
-                                                            padding: EdgeInsets.all(8.0),
-                                                            child: Image(image: AssetImage('images/flutter.jpg'),),
+                                                          Image(image: AssetImage('images/flutter.jpg'),),
+
+                                                      // post details 
+                                                          Padding(
+                                                            padding: const EdgeInsets.all(8.0),
+                                                            child: Row(
+                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                              children: [
+                                                                 Text("This is post detaiils ", style: TextStyle(color: Colors.black,fontSize: 15,),),   
+                                                              ],
                                                             ),
+                                                          ),  
+                                                          
+                                                      // Invest button
+                                                      FlatButton(
+                                                        color: Colors.greenAccent,
+                                                        shape: StadiumBorder(),
+                                                        onPressed: (){
+
+                                                        },
+                                                        child: Padding(
+                                                          padding: const EdgeInsets.only(right: 30.0, left: 30.0),
+                                                          child: Text("Star Investing "),
+                                                        ),
+                                                        
+                                                        ),
                                                         
 
 
