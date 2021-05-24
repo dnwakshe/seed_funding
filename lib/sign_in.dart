@@ -230,7 +230,7 @@ class _RegisterState extends State<Register> {
                           print(_email);
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Login( password : this._password.text, email: this._email.text, )),);
+                            MaterialPageRoute(builder: (context) => Login( )),);
                           _email.text ="";
                           _password.text ="";
                           _mobileNo.text="";
@@ -241,7 +241,7 @@ class _RegisterState extends State<Register> {
                         },
                         height: 80,
                         minWidth: 600,
-                        color: Colors.amberAccent[700],
+                        color: Colors.blue,
                         shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(12),
                         ),

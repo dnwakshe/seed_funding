@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:seed_funding/Login.dart';
+import 'package:seed_funding/grid.dart';
 import 'package:seed_funding/home.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+// void main() {
+  
+//   runApp(MyApp());
+// }
+//==========> this is used for initialization of firestore <==============
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
+// ================> Close<==============
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -23,7 +35,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Index(),
+      home: Login(),
     );
   }
 }

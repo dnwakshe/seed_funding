@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
 class Grid extends StatelessWidget {
+   List<Map> liOfMap =<Map> [
+    {"nameOfcard":"g1", "imgPath" : "images/opp-afda.png" },
+    {"nameOfcard":"g2", "imgPath" : "images/opp-dsaf.png" }, 
+    {"nameOfcard":"g3", "imgPath" : "images/opp-adf.png"},
+    { "nameOfcard":"g4", "imgPath" : "images/startup-funding.png" },
+    { "nameOfcard":"g4", "imgPath" : "images/startup-funding.png" },
+    { "nameOfcard":"g4", "imgPath" : "images/startup-funding.png" },
+  ];
+   List <String> list1 = <String> [
+     "dnyaneshwar","satyam","aarush","Abrar"
+   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,41 +43,38 @@ class Grid extends StatelessWidget {
           ],
           ) ,
 
+
+ 
+         
       body: Center(
-        child: GridView.extent(
-          primary: false,
-          padding: const EdgeInsets.all(16),
+        child: GridView.builder(
+          itemCount: liOfMap.length,
+
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(         
+          
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 2 / 2,
           crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-          maxCrossAxisExtent: 200.0,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),  
-                child: const Text('First', style: TextStyle(fontSize: 20)),  
+          mainAxisSpacing: 30
+          ), 
+
+          itemBuilder: (BuildContext context, int index) {
+            return  Container(
+              height: 150,
+                padding: const EdgeInsets.all(8),  
+                child:  Column(
+                  children: [
+
+                    Image.asset(liOfMap[index]["imgPath"]),
+                    Text(liOfMap[index]["nameOfcard"].toString() ),
+                  ],
+                ),
                 color: Colors.yellow,  
-            ),
+            );
 
-            Container(
-              padding: const EdgeInsets.all(8),  
-                child: const Text('Second', style: TextStyle(fontSize: 20)),  
-                color: Colors.blue,  
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),  
-                child: const Text('Thrid', style: TextStyle(fontSize: 20)),  
-                color: Colors.yellow,  
-            ),
-
-            Container(
-              padding: const EdgeInsets.all(8),  
-                child: const Text('Four', style: TextStyle(fontSize: 20)),  
-                color: Colors.blue,  
-            ),
-
-
-
-          ],
-      ),
+            },
+          
+           ),
       ),
     );
   }

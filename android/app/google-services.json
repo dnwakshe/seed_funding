@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1066557319236",
+    "project_id": "seed-funding",
+    "storage_bucket": "seed-funding.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066557319236:android:3eb66385e0604758a2f411",
+        "android_client_info": {
+          "package_name": "com.example.seed_funding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066557319236-qt5djc7pp4ogssqcds0hasskf0cuhq7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHb0PCyazAAy4bR-t5KtFCZizfqzmXTAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066557319236-qt5djc7pp4ogssqcds0hasskf0cuhq7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
