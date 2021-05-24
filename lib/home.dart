@@ -17,9 +17,13 @@ class _IndexState extends State<Index> {
 
   @override
   Widget build(BuildContext context) {
+    String user_first_name = 'Dnyaneshwar';
+    String user_last_name = 'Wakshe';
+    String e_mail = 'wakshe2@gmail.com';
     return Scaffold(
       appBar: AppBar(
-        title: Text('Seed Funding '),
+        title: Text('Seed Funding'),
+        centerTitle: true,
       ),
       //============================> Bottom Bar Start<=================================
       bottomNavigationBar: BottomNavigationBar(
@@ -47,8 +51,8 @@ class _IndexState extends State<Index> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('Dnyaneshwar Wakshe'),
-              accountEmail: Text('wakshe2@gmail.com'),
+              accountName: Text(user_first_name + ' ' + user_last_name),
+              accountEmail: Text(e_mail),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.orange,
                 child: Text(
@@ -69,7 +73,7 @@ class _IndexState extends State<Index> {
             ),
             ListTile(
               leading: Icon(Icons.settings),
-              title: Text('Setting'),
+              title: Text('Settings'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -94,10 +98,14 @@ class _IndexState extends State<Index> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    //============== Owner Container ==========
+                    //============== Status Container ==========
                     Container(
                       height: 200,
                       width: 500,
+                      padding: EdgeInsets.only(
+                        top: 14,
+                        right: 12,
+                      ),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(15),
@@ -109,9 +117,31 @@ class _IndexState extends State<Index> {
                             ),
                           ]),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Hello world"),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                width: 300.0,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    labelText: "Post a status",
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                    hintText: 'Hello! $user_first_name',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [Container(), Container()],
+                          ),
                         ],
                       ),
                     ),
