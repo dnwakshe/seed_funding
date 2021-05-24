@@ -3,6 +3,7 @@ import 'package:seed_funding/home.dart';
 import 'package:seed_funding/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 
@@ -26,6 +27,7 @@ class Login extends StatelessWidget {
          
 
         }
+        
         }  
     on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
@@ -97,9 +99,20 @@ class Login extends StatelessWidget {
                                 if(isLogin){
                                   
                                    Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Index()),); 
-                                }         
+                                    context,
+                                    MaterialPageRoute(builder: (context) => Index()),); 
+                                }
+                                else{
+                                  Fluttertoast.showToast(
+                                        msg: "Please Enter Correct Email Id and Password..",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        gravity: ToastGravity.CENTER,
+                                        timeInSecForIosWeb: 1,
+                                        backgroundColor: Colors.red,
+                                        textColor: Colors.white,
+                                        fontSize: 16.0
+                                    );
+                                }        
                           },
                         height: 80,
                         minWidth: 600,

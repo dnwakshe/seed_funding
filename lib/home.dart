@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 
 
+
 class Index extends StatefulWidget {
   @override
   _IndexState createState() => _IndexState();
@@ -237,7 +238,11 @@ class _IndexState extends State<Index> {
                                                       ), 
                                                       // for single post sigle image asset view and for multiple photos carousel should  used 
                                                       
-                                                          Image.asset('image/flutter.jpg'),
+                                                          Container(
+                                                            height: 200,
+                                                            padding: EdgeInsets.all(8.0),
+                                                            child: Image(image: AssetImage('images/flutter.jpg'),),
+                                                            ),
                                                         
 
 
