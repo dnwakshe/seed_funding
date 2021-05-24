@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:seed_funding/Login.dart';
-import 'package:seed_funding/grid.dart';
 import 'package:seed_funding/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 
