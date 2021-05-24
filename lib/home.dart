@@ -150,7 +150,7 @@ class _IndexState extends State<Index> {
                     ),
                     //============== Post Container1 ============
                     Container(
-                      height: 700,
+                      height: 650,
                       width: 500,
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -208,7 +208,7 @@ class _IndexState extends State<Index> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsets.only(left: 70.0),
+                                              const EdgeInsets.only(left: 100.0),
                                           child: IconButton(
                                             alignment: Alignment.centerRight,
                                             onPressed: () {},
@@ -228,7 +228,7 @@ class _IndexState extends State<Index> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: Text(
                                   "This my first post in seed funding portal",
                                   style: TextStyle(
@@ -241,9 +241,15 @@ class _IndexState extends State<Index> {
                           ),
                           // for single post sigle image asset view and for multiple photos carousel should  used
 
-                          Image(
-                            image: AssetImage('images/flutter.jpg'),
+                          Container(
+                            height: 400,
+                            child: Center(
+                              child: Image(
+                                image: AssetImage('images/flutter.jpg'),
+                              ),
+                            ),
                           ),
+                          
 
                           // post details
                           Padding(
@@ -260,7 +266,7 @@ class _IndexState extends State<Index> {
                                 ),
                               ],
                             ),
-                          ),
+                          ),                          
 
                           // Invest button
                           FlatButton(
@@ -269,15 +275,30 @@ class _IndexState extends State<Index> {
                             onPressed: () {},
                             child: Padding(
                               padding: const EdgeInsets.only(
-                                  right: 30.0, left: 30.0),
+                                  right: 30.0, left: 30.0,),
                               child: Text("Star Investing "),
                             ),
                           ),
+                            // ================= like comment and share ===============
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(Icons.thumb_up),
+                                    Text("100"),
+                                    Icon(Icons.comment),
+                                    Text("100"),
+                                    Icon(Icons.share_sharp),
+                                    Text("10000"),
+                                  ],
+                                ),
+                            ) 
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 15,
                     ),
 
                     //============== Post Container2 ============
