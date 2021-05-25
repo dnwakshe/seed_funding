@@ -180,7 +180,7 @@ class _IndexState extends State<Index> {
                                         padding: const EdgeInsets.only(left: 100.0),
                                         child: ElevatedButton(
                                                 onPressed: () {},
-                                                child: Text('Button'),
+                                                child: Text('Post'),
                                                 style: ElevatedButton.styleFrom(
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius: BorderRadius.circular(12), // <-- Radius
@@ -204,7 +204,7 @@ class _IndexState extends State<Index> {
                     ),
                     //============== Post Container1 ============
                     Container(
-                      height: 700,
+                      height: 710,
                       width: 500,
                       decoration: BoxDecoration(
                           color: Colors.white,
