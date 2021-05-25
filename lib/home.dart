@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:seed_funding/user_profile.dart';
 
 class Index extends StatefulWidget {
   @override
@@ -52,16 +53,23 @@ class _IndexState extends State<Index> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            UserAccountsDrawerHeader(
-              accountName: Text(user_first_name + ' ' + user_last_name),
-              accountEmail: Text(e_mail),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.orange,
-                child: Text(
-                  'D',
-                  style: TextStyle(fontSize: 40),
+            GestureDetector(
+              child: UserAccountsDrawerHeader(
+                accountName: Text(user_first_name + ' ' + user_last_name),
+                accountEmail: Text(e_mail),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.orange,
+                  child: Text(
+                    'D',
+                    style: TextStyle(fontSize: 40),
+                  ),
                 ),
               ),
+              onTap: (){
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileUI2()),); 
+              },
             ),
             //============================> Inner List Start<=================================
             ListTile(
