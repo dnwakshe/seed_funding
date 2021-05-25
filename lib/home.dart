@@ -19,7 +19,9 @@ class _IndexState extends State<Index> {
   Widget build(BuildContext context) {
     String user_first_name = 'Dnyaneshwar';
     String user_last_name = 'Wakshe';
-    String e_mail = 'wakshe2@gmail.com';
+    String e_mail = 'wakshe2@gmail.com';    
+    TextEditingController caption_post = new TextEditingController();
+    
     return Scaffold(
       appBar: AppBar(
         title: Text('Seed Funding'),
@@ -125,15 +127,23 @@ class _IndexState extends State<Index> {
                               SizedBox(
                                 width: 300.0,
                                 child: TextField(
-                                  decoration: InputDecoration(
-                                    labelText: "Post a status",
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(15.0),
-                                    ),
-                                    hintText: 'Hello! $user_first_name',
-                                  ),
-                                ),
+                                      decoration: InputDecoration(                                        
+                                        labelText: "Post a status",
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(15.0),
+                                          
+                                        ),
+                                        hintText: 'Hello! $user_first_name',                                      
+                                      ), 
+                                      // autofocus: false,
+                                      maxLines: null,
+                                      controller: caption_post,
+                                      
+                                      keyboardType: TextInputType.text,
+                                    ), 
                               ),
+                              
+
                             ],
                           ),
                           SizedBox(
@@ -150,7 +160,7 @@ class _IndexState extends State<Index> {
                     ),
                     //============== Post Container1 ============
                     Container(
-                      height: 650,
+                      height: 700,
                       width: 500,
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -208,7 +218,7 @@ class _IndexState extends State<Index> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsets.only(left: 100.0),
+                                              const EdgeInsets.only(left: 70.0),
                                           child: IconButton(
                                             alignment: Alignment.centerRight,
                                             onPressed: () {},
@@ -228,7 +238,7 @@ class _IndexState extends State<Index> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(10.0),
                                 child: Text(
                                   "This my first post in seed funding portal",
                                   style: TextStyle(
@@ -241,15 +251,9 @@ class _IndexState extends State<Index> {
                           ),
                           // for single post sigle image asset view and for multiple photos carousel should  used
 
-                          Container(
-                            height: 400,
-                            child: Center(
-                              child: Image(
-                                image: AssetImage('images/flutter.jpg'),
-                              ),
-                            ),
+                          Image(
+                            image: AssetImage('images/flutter.jpg'),
                           ),
-                          
 
                           // post details
                           Padding(
@@ -266,7 +270,7 @@ class _IndexState extends State<Index> {
                                 ),
                               ],
                             ),
-                          ),                          
+                          ),
 
                           // Invest button
                           FlatButton(
@@ -275,11 +279,12 @@ class _IndexState extends State<Index> {
                             onPressed: () {},
                             child: Padding(
                               padding: const EdgeInsets.only(
-                                  right: 30.0, left: 30.0,),
+                                  right: 30.0, left: 30.0),
                               child: Text("Star Investing "),
                             ),
                           ),
-                            // ================= like comment and share ===============
+
+                          // ================= like comment and share ===============
                             Padding(
                               padding: const EdgeInsets.all(15.0),
                               child: Row(
@@ -298,7 +303,7 @@ class _IndexState extends State<Index> {
                       ),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
 
                     //============== Post Container2 ============
