@@ -117,15 +117,24 @@ class _IndexState extends State<Index> {
                               offset: const Offset(5.0, 5.0),
                               blurRadius: 5,
                             ),
-                          ]),
+                         ]
+                      ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
+                               Padding(
+                                 padding: const EdgeInsets.only(right: 30.0),
+                                 child: CircleAvatar(
+                                    backgroundColor: Colors.amber,
+                                    child: Text("D"),
+                                    radius: 30,
+                                  ),
+                               ),
                               SizedBox(
-                                width: 300.0,
+                                width: 250.0,
                                 child: TextField(
                                       decoration: InputDecoration(                                        
                                         labelText: "Post a status",
@@ -137,8 +146,7 @@ class _IndexState extends State<Index> {
                                       ), 
                                       // autofocus: false,
                                       maxLines: null,
-                                      controller: caption_post,
-                                      
+                                      controller: caption_post,                                      
                                       keyboardType: TextInputType.text,
                                     ), 
                               ),
@@ -146,11 +154,39 @@ class _IndexState extends State<Index> {
 
                             ],
                           ),
+                        
                           SizedBox(
                             height: 10,
                           ),
-                          Row(
-                            children: [Container(), Container()],
+                          Padding(
+                            padding: const EdgeInsets.all( 30.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                child:  Row(
+                                    children: [
+                                      
+                                      Icon(Icons.collections_outlined,color: Colors.blue, size: 30,),
+                                      
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 100.0),
+                                        child: ElevatedButton(
+                                                onPressed: () {},
+                                                child: Text('Button'),
+                                                style: ElevatedButton.styleFrom(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(12), // <-- Radius
+                                                  ),
+                                                ),
+                                              ),
+                                      )
+
+                                    ],
+                                ),
+                              ), 
+
+                              ]
+                            ),
                           ),
                         ],
                       ),
@@ -290,9 +326,9 @@ class _IndexState extends State<Index> {
                               child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Icon(Icons.thumb_up),
+                                    Icon(Icons.thumb_up_alt_outlined),
                                     Text("100"),
-                                    Icon(Icons.comment),
+                                    Icon(Icons.comment_outlined),
                                     Text("100"),
                                     Icon(Icons.share_sharp),
                                     Text("10000"),
