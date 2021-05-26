@@ -3,6 +3,10 @@ import 'dart:convert';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:seed_funding/Login.dart';
+import 'package:seed_funding/about.dart';
+import 'package:seed_funding/invest.dart';
+import 'package:seed_funding/setting.dart';
 import 'package:seed_funding/user_profile.dart';
 
 class Index extends StatefulWidget {
@@ -78,21 +82,38 @@ class _IndexState extends State<Index> {
               ),
               title: Text('Home'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Index()),);
               },
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
+            
             ListTile(
               leading: Icon(Icons.contacts),
               title: Text('About Us'),
               onTap: () {
-                Navigator.pop(context);
+                 Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => About()),);
+              },
+            ),
+
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+               Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Settings()),);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Log Out'),
+              onTap: () {
+                 Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Login()),);
               },
             ),
           ],
@@ -204,7 +225,7 @@ class _IndexState extends State<Index> {
                     ),
                     //============== Post Container1 ============
                     Container(
-                      height: 710,
+                      height: 730,
                       width: 500,
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -320,7 +341,11 @@ class _IndexState extends State<Index> {
                           FlatButton(
                             color: Colors.greenAccent,
                             shape: StadiumBorder(),
-                            onPressed: () {},
+                            onPressed: () {
+                               Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Invest()),); 
+                            },
                             child: Padding(
                               padding: const EdgeInsets.only(
                                   right: 30.0, left: 30.0),
@@ -349,6 +374,466 @@ class _IndexState extends State<Index> {
                     SizedBox(
                       height: 10,
                     ),
+
+
+                    //============== Post Container1 ============
+                    Container(
+                      height: 730,
+                      width: 500,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              offset: const Offset(5.0, 5.0),
+                              blurRadius: 10,
+                            ),
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Colors.amber,
+                                  child: Text("D"),
+                                  radius: 25,
+                                ),
+                                Column(
+                                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            //========= Owner name ======
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10.0,
+                                                  right: 8.0,
+                                                  left: 8.0),
+                                              child: Text(
+                                                "Dnyaneshwar Wakshe ",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            // ======== subtitle ======
+                                            Text(
+                                              "Software Developer",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 70.0),
+                                          child: IconButton(
+                                            alignment: Alignment.centerRight,
+                                            onPressed: () {},
+                                            icon: Icon(Icons.more_vert),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          //========== post caption ======
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  "This my first post in seed funding portal",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          // for single post sigle image asset view and for multiple photos carousel should  used
+
+                          Image(
+                            image: AssetImage('images/startup-funding.jpg'),
+                          ),
+
+                          // post details
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "This is post detaiils ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          // Invest button
+                          FlatButton(
+                            color: Colors.greenAccent,
+                            shape: StadiumBorder(),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Invest()),); 
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 30.0, left: 30.0),
+                              child: Text("Star Investing "),
+                            ),
+                          ),
+
+                          // ================= like comment and share ===============
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(Icons.thumb_up_alt_outlined),
+                                    Text("100"),
+                                    Icon(Icons.comment_outlined),
+                                    Text("100"),
+                                    Icon(Icons.share_sharp),
+                                    Text("10000"),
+                                  ],
+                                ),
+                            ) 
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+
+
+
+                    //============== Post Container1 ============
+                    Container(
+                      height: 730,
+                      width: 500,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              offset: const Offset(5.0, 5.0),
+                              blurRadius: 10,
+                            ),
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Colors.amber,
+                                  child: Text("D"),
+                                  radius: 25,
+                                ),
+                                Column(
+                                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            //========= Owner name ======
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10.0,
+                                                  right: 8.0,
+                                                  left: 8.0),
+                                              child: Text(
+                                                "Dnyaneshwar Wakshe ",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            // ======== subtitle ======
+                                            Text(
+                                              "Software Developer",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 70.0),
+                                          child: IconButton(
+                                            alignment: Alignment.centerRight,
+                                            onPressed: () {},
+                                            icon: Icon(Icons.more_vert),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          //========== post caption ======
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  "This my first post in seed funding portal",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          // for single post sigle image asset view and for multiple photos carousel should  used
+
+                          Image(
+                            image: AssetImage('images/opp.png'),
+                          ),
+
+                          // post details
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "This is post detaiils ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          // Invest button
+                          FlatButton(
+                            color: Colors.greenAccent,
+                            shape: StadiumBorder(),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Invest()),); 
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 30.0, left: 30.0),
+                              child: Text("Star Investing "),
+                            ),
+                          ),
+
+                          // ================= like comment and share ===============
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(Icons.thumb_up_alt_outlined),
+                                    Text("100"),
+                                    Icon(Icons.comment_outlined),
+                                    Text("100"),
+                                    Icon(Icons.share_sharp),
+                                    Text("10000"),
+                                  ],
+                                ),
+                            ) 
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+
+                    //============== Post Container1 ============
+                    Container(
+                      height: 730,
+                      width: 500,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              offset: const Offset(5.0, 5.0),
+                              blurRadius: 10,
+                            ),
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Colors.amber,
+                                  child: Text("D"),
+                                  radius: 25,
+                                ),
+                                Column(
+                                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            //========= Owner name ======
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10.0,
+                                                  right: 8.0,
+                                                  left: 8.0),
+                                              child: Text(
+                                                "Dnyaneshwar Wakshe ",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            // ======== subtitle ======
+                                            Text(
+                                              "Software Developer",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 70.0),
+                                          child: IconButton(
+                                            alignment: Alignment.centerRight,
+                                            onPressed: () {},
+                                            icon: Icon(Icons.more_vert),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          //========== post caption ======
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  "This my first post in seed funding portal",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          // for single post sigle image asset view and for multiple photos carousel should  used
+
+                          Image(
+                            image: AssetImage('images/images_artiklar_Tillvaxt_liten.jpg'),
+                          ),
+
+                          // post details
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "This is post detaiils ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          // Invest button
+                          FlatButton(
+                            color: Colors.greenAccent,
+                            shape: StadiumBorder(),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Invest()),); 
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 30.0, left: 30.0),
+                              child: Text("Star Investing "),
+                            ),
+                          ),
+
+                          // ================= like comment and share ===============
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(Icons.thumb_up_alt_outlined),
+                                    Text("100"),
+                                    Icon(Icons.comment_outlined),
+                                    Text("100"),
+                                    Icon(Icons.share_sharp),
+                                    Text("10000"),
+                                  ],
+                                ),
+                            ) 
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+
 
                     //============== Post Container2 ============
                     Container(
