@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:seed_funding/Login.dart';
-import 'package:seed_funding/about.dart';
-import 'package:seed_funding/invest.dart';
-import 'package:seed_funding/setting.dart';
-import 'package:seed_funding/user_profile.dart';
+import 'package:seed_funding/screens/Login.dart';
+import 'package:seed_funding/screens/about.dart';
+import 'package:seed_funding/screens/invest.dart';
+import 'package:seed_funding/screens/setting.dart';
+import 'package:seed_funding/screens/user_profile.dart';
 
 class Index extends StatefulWidget {
   @override

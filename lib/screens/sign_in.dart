@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:seed_funding/Login.dart';
+import 'package:seed_funding/screens/Login.dart';
 
 class Register extends StatefulWidget {
   @override

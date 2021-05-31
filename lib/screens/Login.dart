@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:seed_funding/home.dart';
-import 'package:seed_funding/sign_in.dart';
+import 'package:seed_funding/screens/home.dart';
+import 'package:seed_funding/screens/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';

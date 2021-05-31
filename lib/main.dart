@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:seed_funding/Login.dart';
-import 'package:seed_funding/about.dart';
-import 'package:seed_funding/home.dart';
+import 'package:seed_funding/screens/Login.dart';
+import 'package:seed_funding/screens/about.dart';
+import 'package:seed_funding/screens/buidlWidget.dart';
+import 'package:seed_funding/screens/grid.dart';
+import 'package:seed_funding/screens/home.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:seed_funding/user_profile.dart';
+import 'package:seed_funding/screens/user_profile.dart';
 
 // void main() {
 
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: MyClass(),
     );
   }
 }
